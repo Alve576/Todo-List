@@ -1,5 +1,8 @@
 var form = document.querySelector('.form');
 var inp = document.querySelector('.inp');
+var todolist = document.querySelector('.todolist');
+
+
 
 var todos = JSON.parse(localStorage.getItem("todos"));
 
@@ -21,17 +24,21 @@ function addTodo(todo) {
     }
     if(todoText){
         var todoEl = document.createElement('li');
+        var icon = document.createElement('i');
+        icon.setAttribute('class','fas fa-trash')
         todoEl.innerHTML = todoText;
         todoEl.addEventListener('click',() => {
             todoEl.classList.toggle('done')
             updateLS()
         })
-        todoEl.addEventListener('contextmenu',(e) => {
+        icon.addEventListener('click',(e) => {
             e.preventDefault()
             todoEl.remove()
+            icon.remove()
             updateLS()
         })
-        document.body.appendChild(todoEl);
+        todolist.appendChild(todoEl);
+        todolist.appendChild(icon)
         inp.value ='';
         updateLS()
     }

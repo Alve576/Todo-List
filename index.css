@@ -36,9 +36,10 @@ body{
 li{
     list-style-type: none;
     background-color: white;
+    position: relative;
    width: 400px;
+   margin-left: -40px;
    padding: 10px;
-   margin-left: 16px;
    margin-top: 10px;
    cursor: pointer;
    box-shadow: 0 4px 10px black;
@@ -49,4 +50,17 @@ li{
 
 li.done{
     text-decoration:line-through;
+}
+
+
+.todolist{
+    position: absolute;
+}
+
+i{
+    position: relative;
+    margin: 10px -26px;
+    color: wheat;
+    
+
 }
